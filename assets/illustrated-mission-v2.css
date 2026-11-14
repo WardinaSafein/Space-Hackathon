@@ -1,0 +1,80 @@
+/* SPACE SLEUTHS | Illustrated Mission Archive V2
+   Original visual assets and live HTML interface: not screenshot backgrounds with baked-in buttons. */
+:root{--bg:#0b1422;--bg2:#111c2b;--panel:#111d2e;--panel2:#18293b;--text:#f4e9d7;--muted:#afc0c6;--cyan:#7ad1c7;--coral:#ee7771;--amber:#ffc06a;--line:rgba(164,210,207,.28);--paper:#f4e9d7;--teal:var(--cyan);--torch:var(--amber);--stamp:var(--coral);--ok:var(--cyan)}
+body{background:radial-gradient(ellipse at 96% 20%,#ed796a1a,transparent 45%),radial-gradient(ellipse at 2% 80%,#7ad1c720,transparent 40%),#0b1422 fixed;color:var(--text)}
+main{max-width:1340px!important;padding:42px clamp(14px,3vw,34px) 58px!important}
+.stars{opacity:.38}
+.screen{animation:missionAppear .45s ease both}
+@keyframes missionAppear{from{opacity:0;transform:translateY(13px)}to{opacity:1;transform:none}}
+button:focus-visible,a:focus-visible{outline:3px solid #ffc06a!important;outline-offset:4px}
+.btn,.cta{border-radius:0;background:#f4e9d7!important;color:#0b1422!important;border:1px solid #f2d6a9!important;box-shadow:5px 5px 0 #e97770!important;transition:transform .18s,box-shadow .18s,background .18s}
+.btn:hover:not(:disabled),.cta:hover{transform:translate(-2px,-2px);background:#ffcc80!important;box-shadow:7px 7px 0 #e97770!important;filter:none!important}
+.btn.ghost{background:#0f1b2b!important;color:#f4e9d7!important;border:1px solid #82999b!important;box-shadow:none!important}
+.btn.ghost:hover{background:#243b4c!important}
+.btn:disabled{opacity:.4;box-shadow:none!important}
+.mute{position:fixed;right:14px;top:14px;border:1px solid #d0ab78;background:rgba(6,16,27,.92);z-index:70}
+/* Title: live text and CTA on a separate custom observatory illustration */
+#title .stage{max-width:1260px}
+#title .art-clip{position:relative;border:1px solid #e9ba85aa;clip-path:polygon(0 0,calc(100% - 16px) 0,100% 16px,100% 100%,16px 100%,0 calc(100% - 16px));box-shadow:0 24px 80px #0009}
+#title .art{aspect-ratio:16/10;transform:none!important;background:#101b2b}
+#title .art img.bg{object-fit:cover}
+#title .art .shade{background:linear-gradient(90deg,rgba(7,17,29,.87) 0%,rgba(8,20,32,.67) 38%,rgba(8,20,32,.09) 74%),linear-gradient(0deg,#06121e99,transparent 42%)}
+#title .art .fx{display:none}
+#title .copy{position:absolute;top:clamp(32px,8%,88px);left:clamp(24px,6%,74px);width:min(79%,770px);z-index:3;text-shadow:0 2px 16px #06111b}
+#title .copy .kicker{color:#9dede3;font-size:clamp(10px,1.1vw,15px);letter-spacing:.22em;border-color:#75cabc88}
+#title h1{font-size:clamp(52px,7.6cqw,104px);white-space:normal;line-height:.91;max-width:760px;margin:.37em 0 .2em;letter-spacing:-.025em}
+#title h1 span{color:#ff8580;text-shadow:none}
+#title .tag{font-size:clamp(13px,1.5vw,19px);line-height:1.5;max-width:560px}
+#title .lede{max-width:570px;background:rgba(7,17,29,.52);backdrop-filter:blur(3px);padding:12px 18px;border-left:2px solid var(--amber);font-size:clamp(13px,1.55vw,19px)}
+#title .cta{padding:clamp(12px,1.6vw,22px) clamp(17px,2.8vw,34px);font-size:clamp(13px,1.6vw,19px)}
+#title .cta-wrap{margin-top:16px;display:inline-block}
+#title .art-clip::after{content:"MISSION CONTROL // EST. 2026";position:absolute;bottom:14px;right:24px;font:10px 'Space Mono',monospace;color:#e9e1d4;letter-spacing:.16em;text-shadow:0 2px 8px #07111d}
+/* Briefing: original tracking dish under layered responsive real text */
+#briefing{background:linear-gradient(90deg,#0c1b2cd9,#0c1b2c44),url('tracking-station.svg') center bottom/cover no-repeat;min-height:620px;padding:clamp(24px,5vw,74px);border:1px solid #d6a77777;box-shadow:0 20px 55px #0007}
+#briefing .dossier{margin:0 0 0 auto;max-width:min(100%,770px);background:linear-gradient(140deg,#15253aF5,#0b1727F7);border:1px solid #e8bb7b88;border-left:4px solid #7ad1c7;box-shadow:14px 16px 0 #08121dbd,0 16px 50px #0008;padding:clamp(29px,4vw,60px)}
+#briefing .dossier::before{content:"";position:absolute;right:17px;bottom:16px;width:82px;height:82px;background:url('archive-insignia.svg') center/contain no-repeat;opacity:.22;pointer-events:none}
+#briefing h2{font-size:clamp(34px,4vw,54px);line-height:1.1}
+#briefing p{max-width:680px}
+#briefing .meta{color:#9ce7df}
+#briefing .actions{margin-top:28px}
+/* Evidence board: tactile original mission archive without fixed-size baked text */
+.board-head{border-bottom:1px solid #d2c4a04d;padding-bottom:15px;margin-bottom:20px}
+.board-head h2{font-size:clamp(33px,4.5vw,58px);letter-spacing:-.06em}
+.board-head h2::before{content:"MISSION ARCHIVE / 05";display:block;font:11px 'Space Mono',monospace;letter-spacing:.24em;color:var(--amber);margin-bottom:7px}
+.progress{background:#142535d9;border:1px solid #7ad1c777;padding:10px 14px;color:#9ce7df}
+.cork{position:relative;border:1px solid #d6b17a77;padding:54px clamp(12px,3vw,44px) 42px;background:linear-gradient(#09132122,#09132166),url('evidence-field.svg') center/cover no-repeat;box-shadow:0 18px 55px #0008}
+.cork::before{content:"MISSION CONTROL // CASE RECORDS";position:absolute;top:15px;left:20px;color:#b1d9d3;font:10px 'Space Mono',monospace;letter-spacing:.18em}
+.pinboard{gap:40px 30px}
+.card{background:#f0e1c6;color:#142133;max-width:260px;padding:9px 9px 17px;border:1px solid #ead0a7;box-shadow:0 12px 0 #0b142275,0 22px 40px #0008;transform:rotate(var(--r,0deg));transition:transform .22s,box-shadow .22s}
+.card:hover,.card:focus-visible{transform:rotate(0) translateY(-5px);box-shadow:0 6px 0 #ee7771,0 24px 42px #0008;border-color:#ffc06a}
+.card img{width:100%;aspect-ratio:4/3;object-fit:cover;border:1px solid #55493955}
+.card .tag{color:#98423f;font-weight:700;font-size:11px}
+.card h3{color:#142133;line-height:1.14;font-size:clamp(16px,1.7vw,21px)}
+.card .where{color:#576372;font-size:11px}
+.pin,.pin.blue,.memo .pin{border:3px solid #f5dfb3;box-shadow:0 4px 10px #0008}
+.memo{background:#15263b;border:1px solid #eabd7a;padding:26px 18px;max-width:260px;box-shadow:0 18px 40px #0008}
+.memo::before{content:"";display:block;width:62px;height:62px;background:url('archive-insignia.svg') center/contain no-repeat;margin:0 auto 14px}
+.memo h3{line-height:1.18}
+.memo p{color:#bfc8cd}
+.strings{opacity:.56}
+.sticky{font-family:'Space Mono',monospace}
+/* Case dossier: evidence first, clear reading flow, preserved dynamic buttons */
+.case-top{padding:8px 0 20px;border-bottom:1px solid #d6b17a55;margin-bottom:22px}
+.case-card{max-width:1070px;margin:0 auto;background:linear-gradient(145deg,#1b2a40,#0f1c2d);border:1px solid #d6b17a77;border-left:4px solid #7ad1c7;padding:clamp(20px,3.6vw,40px);box-shadow:10px 14px 0 #081320,0 25px 60px #0008}
+.case-card .hero{margin:calc(-1*clamp(20px,3.6vw,40px)) calc(-1*clamp(20px,3.6vw,40px)) 28px}
+.case-card .hero img{aspect-ratio:2.45/1;object-fit:cover;filter:contrast(1.08) saturate(.89)}
+.case-card .hero::after{background:linear-gradient(0deg,#18293b,transparent 80%)}
+.case-card .where{font-size:11px;color:#91e5db;letter-spacing:.18em}
+.case-card h2{font-size:clamp(32px,4.7vw,58px);line-height:1.05}
+.mystery{background:#ee77710e;border-left:4px solid #ee7771;padding:13px 18px;font-size:clamp(18px,2vw,22px)}
+.clues{gap:13px}
+.clue{border-left:3px solid #7ad1c7;padding:18px 20px;background:#e1eff006}
+.clue:hover,.clue.open{background:#7ad1c70e}
+.opt{padding:17px 22px 17px 47px}
+.opt:hover:not([disabled]){background:#ffc06a12;border-color:#ffc06a}
+.reveal h3{border-top:1px solid #7ad1c734;padding-top:17px}
+.reveal .fact{background:#ffc06a0f}
+footer{border-top:1px solid #b6b3a640;padding-top:20px;margin-top:55px}
+@media(max-width:950px){#title .copy{top:5%;left:5%;width:85%}#title h1{font-size:clamp(42px,8cqw,80px)}#title .lede{max-width:470px;font-size:14px}#title .tag{font-size:15px}#briefing{padding:38px 20px}}
+@media(max-width:650px){main{padding:48px 12px 30px!important}#title .art{aspect-ratio:4/5}#title .art img.bg{object-position:61% center}#title .art .shade{background:linear-gradient(180deg,#071320e8,#071320b5 54%,#07132044)}#title .copy{top:5%;left:6%;width:88%}#title h1{font-size:clamp(48px,13cqw,80px)}#title .tag{font-size:13px}#title .lede{font-size:13px;line-height:1.45;max-width:92%;padding:10px 12px}#title .cta{font-size:13px;padding:11px 16px}#title .art-clip::after{font-size:7px;right:8px;bottom:8px}#briefing{padding:25px 14px;min-height:560px}#briefing .dossier{padding:35px 22px}#briefing h2{font-size:34px}#briefing p{font-size:16px}.cork{padding:43px 11px 24px}.pinboard{gap:28px 12px}.card{padding:6px 6px 11px}.card h3{font-size:15px}.card .tag{font-size:9px;letter-spacing:1px}.card .where{font-size:10px}.memo{padding:18px 12px}.memo h3{font-size:19px}.memo p{font-size:12px}.case-card .hero{margin:-20px -20px 20px}.case-card{padding:20px}.mute{right:8px;top:8px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
