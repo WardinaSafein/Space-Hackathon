@@ -1,0 +1,51 @@
+/* Space Sleuths: Mission Archive visual refresh. Original research-station aesthetic. */
+:root{--bg:#0b1321;--bg2:#101b2b;--panel:#101b2c;--panel2:#1a293d;--line:rgba(175,211,210,.24);--text:#f4e9d7;--muted:#acbac5;--cyan:#7ad1c7;--coral:#ee7771;--amber:#ffc06a;--violet:#94a1c7;--paper:var(--text);--teal:var(--cyan);--torch:var(--amber);--stamp:var(--coral);--ok:var(--cyan)}
+body{background:radial-gradient(ellipse at 90% 12%,#ee777120,transparent 42%),radial-gradient(ellipse at 10% 90%,#7ad1c71d,transparent 46%),#0b1321 fixed}
+main{max-width:1180px;padding:34px 24px 56px}
+.btn{background:#f4e9d7;color:#101b2b;border:1px solid #edd5b8;border-radius:0;clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px);box-shadow:4px 4px 0 #ee7771b0;transition:transform .2s,box-shadow .2s,background .2s}
+.btn:hover{filter:none;background:#ffc06a;transform:translate(-2px,-2px);box-shadow:6px 6px 0 #ee7771}
+.btn.ghost{background:#131f31;color:#f4e9d7;border:1px solid #607b86;box-shadow:none;clip-path:none}
+.btn.ghost:hover{background:#25394d;border-color:#7ad1c7;color:#f4e9d7}
+.mute{position:fixed;top:12px;right:12px;background:#0b1321ee;border-color:#788b92;z-index:70}
+.dossier{position:relative;background:linear-gradient(140deg,#1a2a40,#0e1829);border:1px solid #46606d;box-shadow:8px 10px 0 #080f19,0 26px 60px #0006}
+.dossier::before{content:"";position:absolute;top:14px;right:14px;border-top:2px solid #ffc06a;border-right:2px solid #ffc06a;width:25px;height:25px;pointer-events:none}
+#briefing .dossier{max-width:890px;min-height:490px;padding:58px 7%;margin:4vh auto 8vh;overflow:hidden}
+#briefing .dossier::after{content:"";position:absolute;right:-80px;bottom:-115px;width:330px;height:330px;background:url('orbit-diagram.svg') center/contain no-repeat;opacity:.12;pointer-events:none}
+#briefing h2{font-size:clamp(32px,4vw,54px);line-height:1.1}
+#briefing p{position:relative;z-index:1;max-width:720px}
+.board-head{align-items:center;padding-bottom:18px;border-bottom:1px solid #71858b55}
+.board-head h2{font-size:clamp(34px,5vw,58px);line-height:1}
+.board-head h2::before{content:"ARCHIVE / 001";display:block;font:11px 'Space Mono',monospace;color:#ffc06a;letter-spacing:.2em;margin-bottom:10px}
+.progress{padding:9px 14px;background:#132435;border:1px solid #7ad1c777;font-size:12px}
+.cork{padding:52px 34px;border:1px solid #6c859044;background:linear-gradient(#7ad1c70b 1px,transparent 1px) 0 0/30px 30px,linear-gradient(90deg,#7ad1c70b 1px,transparent 1px) 0 0/30px 30px,radial-gradient(ellipse at 50% 8%,#25364a,#0c1626 78%);box-shadow:inset 0 0 65px #0006,0 22px 65px #0005}
+.cork::before{content:"MISSION EVIDENCE / FIVE OPEN FILES";position:absolute;top:12px;left:22px;font:10px 'Space Mono',monospace;letter-spacing:.2em;color:#9fb4b9}
+.pinboard{gap:34px}
+.card{background:#eadfcb;color:#162638;max-width:245px;border:0;box-shadow:0 8px 0 #0002,0 18px 34px #0008}
+.card:hover{border-color:transparent;box-shadow:0 5px 0 #ee7771,0 25px 40px #0009}
+.card img{filter:saturate(.86) contrast(1.06)}
+.card .tag{color:#9f4744;font-weight:700}
+.card h3{color:#182638}.card .where{color:#596775}
+.card.solved img{filter:grayscale(.6) brightness(.8)}
+.pin,.pin.blue,.memo .pin{border:3px solid #f8e6ca;box-shadow:0 3px 10px #0008}
+.memo{background:linear-gradient(135deg,#25374b,#141f30);max-width:258px;padding:24px 19px;box-shadow:0 20px 40px #0009}
+.memo::before{content:"";display:block;width:57px;height:57px;margin:0 auto 10px;background:url('archive-insignia.svg') center/contain no-repeat}
+.strings{opacity:.55}
+.sticky{font-family:'Space Mono',monospace}
+.case-top{padding:12px 0 20px;border-bottom:1px solid #7ad1c733;margin-bottom:20px}
+.case-card{max-width:1010px;margin:auto;padding:34px 38px}
+.hero{margin:-34px -38px 24px}
+.hero img{aspect-ratio:2.25/1;filter:contrast(1.07) saturate(.9)}
+.hero::after{height:60%;background:linear-gradient(transparent,#1a293d)}
+.case-card h2{font-size:clamp(34px,5vw,57px);line-height:1.05}
+.case-card .where{color:#7ad1c7;font-size:11px;letter-spacing:.18em}
+.mystery{padding:13px 17px;background:#ee777112;border-left:4px solid #ee7771}
+.clue{background:#d3e5e908;border-left:3px solid #7ad1c7;padding:18px 20px}
+.clue:hover,.clue.open{background:#7ad1c711}
+.opt{padding:17px 20px 17px 48px}
+.opt:hover:not([disabled]){border-color:#ffc06a;background:#ffc06a12}
+.reveal h3{border-top:1px solid #7ad1c733;padding-top:16px}
+.reveal .fact{background:#ffc06a13}
+footer{border-top:1px solid #8aa1a333;padding-top:20px;max-width:920px;margin:50px auto 0}
+@media(max-width:759px){main{padding:38px 14px}.cork{padding:46px 14px 26px}.pinboard{gap:24px 12px}#briefing .dossier{padding:44px 22px;min-height:0}.case-card{padding:23px 18px}.hero{margin:-23px -18px 23px}}
+@media(max-width:520px){.board-head h2{font-size:36px}.card h3{font-size:15px}.card .tag{font-size:9px}.card .where{font-size:10px}.memo{padding:15px 10px}.memo h3{font-size:19px}.memo p{font-size:12px}.mute{top:7px;right:7px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
