@@ -1,0 +1,31 @@
+name: Space Sleuths browser checks
+on:
+  pull_request:
+    paths:
+      - 'index.html'
+      - 'assets/**'
+      - 'tests/**'
+      - 'playwright.config.cjs'
+      - '.github/workflows/ui-smoke.yml'
+  workflow_dispatch:
+jobs:
+  browser-check:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-save @playwright/test
+      - run: npx playwright install --with-deps chromium
+      - run: npx playwright test
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: space-sleuths-browser-check
+          path: |
+            test-results/
+            playwright-report/
+          retention-days: 7
